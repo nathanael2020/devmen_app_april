@@ -2,6 +2,8 @@
 # See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
 en:
+  show_analysis_in_window: Show in separate window
+  cart_ingredients: Analize Ingredients
   ingredient_products: Ingredients
   ingredient:
     new_ingredient: New ingredient

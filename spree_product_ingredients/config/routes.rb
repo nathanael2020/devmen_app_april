@@ -7,4 +7,6 @@ Spree::Core::Engine.routes.draw do
     end
   end
 
+  resources :ingredients, only: [:index]
+
 end

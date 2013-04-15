@@ -11,13 +11,13 @@
  *= require_self
  *= require_tree .
  *= require store/spree_reviews
- 
- 
+
+
  *= require jquery-ui-1.9.2.custom
  *= require jquery.bxslider
  *= require icons
  *= require icons-codes
-
+ *= require store/spree_product_ingredients
 */
 
 body {
@@ -25,7 +25,7 @@ body {
   font-size: 12pt;
 /*  font-weight: 400;*/
   color: #404042;
-  line-height: 24px !important;  
+  line-height: 24px !important;
   background-color: #FFFFFF;
   -webkit-font-smoothing: antialiased;
 }
@@ -33,7 +33,7 @@ body {
 @media (min-resolution: 192dpi), (-webkit-min-device-pixel-ratio: 2), (min--moz-device-pixel-ratio: 2), (-o-min-device-pixel-ratio: 2/1), (min-device-pixel-ratio: 2), (min-resolution: 2dppx) {
 
 	body {
-	
+
 		background: white;
 		padding-top: 100px;
 		background-position: left top;
@@ -41,13 +41,13 @@ body {
 		background-color: #ffffff;
 		background-attachment: fixed;
 
-	
+
 	}
 
 }
 
 body {
-	
+
 		background: white;
 	padding-top: 100px;
 	background-position: left top;
@@ -55,7 +55,7 @@ body {
 	background-color: #ffffff;
 background-attachment: fixed;
 
-	
+
 }
 
 
@@ -92,7 +92,7 @@ color: #0033ee;
 }
 
 #tabs .ui-widget {
-font-size: 12pt/*{fsDefault} 
+font-size: 12pt/*{fsDefault}
 */;
 }
 
@@ -118,10 +118,10 @@ list-style: none;
 }
 
 .ui-tabs .ui-tabs-nav {
-	
+
 	padding: 0em !important;
-	
-	
+
+
 }
 .ui-tabs .ui-tabs-panel {
 	display: block;
@@ -136,11 +136,11 @@ list-style: none;
 .ui-widget-content {
 border: 0px solid #aaaaaa !important;
 background: #ffffff/*{bgColorContent} *= require store/spree_fancy
-*/ url(images/ui-bg_flat_75_ffffff_40x100.png)/*{bgImgUrlContent} 
-*/ 50%/*{bgContentXPos} 
-*/ 50%/*{bgContentYPos} 
+*/ url(images/ui-bg_flat_75_ffffff_40x100.png)/*{bgImgUrlContent}
+*/ 50%/*{bgContentXPos}
+*/ 50%/*{bgContentYPos}
 */ repeat-x/*{bgContentRepeat}
-	
+
 */;
 color: #222222/*{fcContent} *
 */;
@@ -181,7 +181,7 @@ content: "";
 display: table;
 }
 
-#tabs .ui-tabs { position: relative; padding-right: .2em; zoom: 1; } /* position: relative prevents IE scroll bug (element with position: relative inside container with overflow: auto appear as "fixed")  
+#tabs .ui-tabs { position: relative; padding-right: .2em; zoom: 1; } /* position: relative prevents IE scroll bug (element with position: relative inside container with overflow: auto appear as "fixed")
 */
 .ui-tabs .ui-tabs-nav li a { margin: 0; padding-left: 0em !important; }
 
@@ -192,8 +192,8 @@ display: table;
 #tabs .ui-tabs .ui-tabs-nav li a { float: left; padding: 0em; text-decoration: none; }
 #tabs .ui-tabs .ui-tabs-nav li.ui-tabs-selected { margin-bottom: 0; padding-bottom: 1px; }
 #tabs .ui-tabs .ui-tabs-nav li.ui-tabs-selected a, .ui-tabs .ui-tabs-nav li.ui-state-disabled a, .ui-tabs .ui-tabs-nav li.ui-state-processing a { cursor: text; }
-#tabs .ui-tabs .ui-tabs-nav li a, .ui-tabs.ui-tabs-collapsible .ui-tabs-nav li.ui-tabs-selected a { cursor: pointer; } /* first selector in group seems obsolete, but required to overcome bug in Opera applying cursor: text overall if defined elsewhere...  
-	
+#tabs .ui-tabs .ui-tabs-nav li a, .ui-tabs.ui-tabs-collapsible .ui-tabs-nav li.ui-tabs-selected a { cursor: pointer; } /* first selector in group seems obsolete, but required to overcome bug in Opera applying cursor: text overall if defined elsewhere...
+
 */
 
 /*.ui-tabs .ui-tabs-panel { display: block; border-width: 0; padding: 1em 0em ; background: none; }*/
@@ -251,7 +251,7 @@ display: table;
 
 /*
  * jQuery.Rating Plugin CSS - http://www.fyneworks.com/jquery/star-rating/
- ************************************************************************** 
+ **************************************************************************
 */
 
 div.rating-cancel, div.star-rating {
@@ -289,17 +289,17 @@ div.star-rating-hover, div.star-rating-hover a {
   background-position: 0 -30px !important;
 }
 
-/* Read Only CSS  
-	
+/* Read Only CSS
+
 */
 div.star-rating-readonly a {
   cursor: default !important
 }
 
-/* Partial Star CSS  
+/* Partial Star CSS
 */
 div.star-rating {
-/* 
+/*
 This caused the review stars not to show up
 background-color: transparent !important;
 overflow: hidden !important
@@ -307,7 +307,7 @@ overflow: hidden !important
 */
 }
 
-/* END jQuery.Rating Plugin CSS  
+/* END jQuery.Rating Plugin CSS
 */
 
 
@@ -349,7 +349,7 @@ font-size: 12pt;
         }
       }
     }
-   
+
   }
 
 
@@ -361,7 +361,7 @@ font-size: 12pt;
 
     margin-top: 15px;
   }
-  
+
    nav#taxonomies .taxonomy-root {
     text-transform: uppercase;
     border-bottom: 1px solid rgba(217, 217, 219, 1);
@@ -369,23 +369,23 @@ font-size: 12pt;
 
     margin-top: 15px;
   }
-  
+
   ul.taxons-list-1 {
-  
+
   }
-  
+
   ul.taxons-list-0 {
    margin-left: 15px;
   }
-  
+
   div.header-image {
-	  
+
 	background-color: transparent;
 	margin:0px;
 /*	height:100px;*/
-	  
+
   }
-  
+
   nav #main-nav-bar {
 text-transform: uppercase;
 font-weight: bold;
@@ -397,16 +397,16 @@ padding-bottom: 6px;
 }
 
 #top-nav-bar a {
-	
+
 	color: #333333;
-	
+
 }
 
 
 #main-nav-bar a {
-	
+
 	color: #333333;
-	
+
 }
 
 nav#taxonomies .taxonomy-root {
@@ -439,9 +439,9 @@ background: transparent;
 
 
 .row {
-	
+
 	margin-bottom: 0px;
-	
+
 }
 
 #header.row {
@@ -491,7 +491,7 @@ display: block;
 div.review {
 
 	margin-top: 15px;
-	
+
 }
 
 .ratings, .ratings-stars {
@@ -502,12 +502,12 @@ div.review {
 
 #ratings .p {
 	padding-top: 5px;
-	padding-bottom: 0px;	
+	padding-bottom: 0px;
 }
 */
 
 a {
-	
+
 	color: #55733c;
 }
 
@@ -535,7 +535,7 @@ padding: 0px;
 .container .twelve.columns {
 	margin-left: auto;
 	margin-right: auto;
-	
+
 /*
 background-color: rgba(255,255,255,1);
 padding: 0px;
@@ -587,7 +587,7 @@ margin-right: 10px;
 
 
 #wrapper.container {
-	
+
 	background-color: rgba(255,255,255,0.9);
 	padding: 20px;
 	border-radius: 10px;
@@ -596,32 +596,37 @@ margin-right: 10px;
 }
 
 #wrapper p {
-	
+
 	color: black !important;
-	
+
 }
 
 #wrapper a {
-	
+
 	color: #333333 !important;
-	
+
 }
 
 #wrapper form {
-	
+
 	margin-right:0px;
 	max-width: 300px;
 }
+#wrapper form.edit_order {
+
+	margin-right:0px;
+	max-width: 100%;
+}
 
 #wrapper .row {
-	
+
 	margin-left:20px;
-	
+
 }
 
 
 #wrapper2.container {
-	
+
 	background-color: rgba(255,255,255,0.9);
 	padding: 20px;
 	border-radius: 10px;
@@ -630,27 +635,27 @@ margin-right: 10px;
 }
 
 #wrapper2 p {
-	
+
 	color: black !important;
-	
+
 }
 
 #wrapper2 a {
-	
+
 	color: #333333 !important;
-	
+
 }
 
 #wrapper2 form {
-	
+
 	margin-right:0px;
 	max-width: 300px;
 }
 
 #wrapper2 .row {
-	
+
 	margin-left:20px;
-	
+
 }
 
 
@@ -662,9 +667,9 @@ margin-right: 10px;
 }
 
 span.price.selling {
-	
+
 	font-size: 12pt;
-	
+
 }
 
 ul#products li .price {
@@ -684,20 +689,20 @@ overflow: hidden;
 }
 
 #products p.ratings-stars {
-	
+
 	margin: 10px 0px 0px 0px;
 	padding: 0px;
-	
+
 }
 
 #products div.ratings {
-	
+
 	padding: 0px;
 	line-height: 18px;
 }
 
 .home-page-header {
-	
+
 text-transform: uppercase;
 border-bottom: 1px solid rgba(217, 217, 219, 1);
 margin-bottom: 5px;
@@ -708,7 +713,7 @@ max-width: 90%;
 
 .home-page-content {
 
-padding: 10px;	
-	
-	
+padding: 10px;
+
+
 }
