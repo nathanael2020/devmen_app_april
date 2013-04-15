@@ -1,0 +1,714 @@
+
+/*
+ * This is a manifest file that'll automatically include all the stylesheets available in this directory
+ * and any sub-directories. You're free to add application-wide styles to this file and they'll appear at
+ * the top of the compiled file, but it's generally better to create a new file per style scope.
+ *
+
+ *= require store/spree_core
+ *= require store/spree_promo
+
+ *= require_self
+ *= require_tree .
+ *= require store/spree_reviews
+ 
+ 
+ *= require jquery-ui-1.9.2.custom
+ *= require jquery.bxslider
+ *= require icons
+ *= require icons-codes
+
+*/
+
+body {
+  font-family: 'Gill Sans';
+  font-size: 12pt;
+/*  font-weight: 400;*/
+  color: #404042;
+  line-height: 24px !important;  
+  background-color: #FFFFFF;
+  -webkit-font-smoothing: antialiased;
+}
+
+@media (min-resolution: 192dpi), (-webkit-min-device-pixel-ratio: 2), (min--moz-device-pixel-ratio: 2), (-o-min-device-pixel-ratio: 2/1), (min-device-pixel-ratio: 2), (min-resolution: 2dppx) {
+
+	body {
+	
+		background: white;
+		padding-top: 100px;
+		background-position: left top;
+		background-repeat: repeat;
+		background-color: #ffffff;
+		background-attachment: fixed;
+
+	
+	}
+
+}
+
+body {
+	
+		background: white;
+	padding-top: 100px;
+	background-position: left top;
+	background-repeat: no-repeat;
+	background-color: #ffffff;
+background-attachment: fixed;
+
+	
+}
+
+
+/*a {
+text-decoration: none;
+color: #0033ee;
+}
+*/
+
+#tabs .ui-widget-header {
+	background: transparent;
+	border: none;
+	border-bottom: 1px solid #c0c0c0;
+	-moz-border-radius: 0px;
+	-webkit-border-radius: 0px;
+	border-radius: 0px;
+}
+#tabs .ui-state-default {
+	background: transparent;
+	border: none;
+		font-size: 12pt;
+
+}
+#tabs .ui-state-active {
+	background: transparent url(img/uiTabsArrow.png) no-repeat bottom center;
+	border: none;
+}
+#tabs .ui-state-default a {
+	color: #999999 !important;
+}
+
+#tabs .ui-state-active a {
+	color: #000000 !important;
+}
+
+#tabs .ui-widget {
+font-size: 12pt/*{fsDefault} 
+*/;
+}
+
+/*
+#tabs .ui-widget-content {
+font-family: inherit;
+font-size: inherit;
+}*/
+
+#tabs .ui-tabs .ui-tabs-nav li {
+list-style: none;
+white-space: nowrap;
+}
+
+#tabs .ui-tabs .ui-tabs-nav li.ui-tabs-selected a, .ui-tabs .ui-tabs-nav li.ui-state-disabled a, .ui-tabs .ui-tabs-nav li.ui-state-processing a {
+cursor: text;
+}
+
+#tabs .ui-helper-reset {
+line-height: 1.3;
+font-size: 100%;
+list-style: none;
+}
+
+.ui-tabs .ui-tabs-nav {
+	
+	padding: 0em !important;
+	
+	
+}
+.ui-tabs .ui-tabs-panel {
+	display: block;
+	border-width: 0;
+	padding: 0em !important;
+	background: none;
+	font-family: 'Gill Sans';
+	font-size: 13px;
+
+}
+
+.ui-widget-content {
+border: 0px solid #aaaaaa !important;
+background: #ffffff/*{bgColorContent} *= require store/spree_fancy
+*/ url(images/ui-bg_flat_75_ffffff_40x100.png)/*{bgImgUrlContent} 
+*/ 50%/*{bgContentXPos} 
+*/ 50%/*{bgContentYPos} 
+*/ repeat-x/*{bgContentRepeat}
+	
+*/;
+color: #222222/*{fcContent} *
+*/;
+}
+
+.ui-tabs .ui-tabs-nav li {
+list-style: none;
+float: left;
+position: relative;
+top: 1px;
+margin: 0 .2em 1px 0;
+border-bottom: 0 !important;
+padding: 0;
+white-space: nowrap;
+}
+
+#tabs .ui-helper-clearfix {
+zoom: 1;
+}
+
+#tabs .ui-helper-reset {
+margin: 0;
+padding: 0;
+border: 0;
+outline: 0;
+line-height: 1.3;
+text-decoration: none;
+font-size: 100%;
+list-style: none;
+}
+
+.ui-helper-clearfix::after {
+clear: both;
+}
+
+.ui-helper-clearfix::before, .ui-helper-clearfix::after {
+content: "";
+display: table;
+}
+
+#tabs .ui-tabs { position: relative; padding-right: .2em; zoom: 1; } /* position: relative prevents IE scroll bug (element with position: relative inside container with overflow: auto appear as "fixed")  
+*/
+.ui-tabs .ui-tabs-nav li a { margin: 0; padding-left: 0em !important; }
+
+/*.ui-tabs .ui-tabs-nav li { list-style: none; float: left; position: relative; top: 1px; margin: 0 .2em 1px 0; border-bottom: 0 !important; padding: 0; white-space: nowrap; }*/
+
+#tabs .ui-tabs .ui-tabs-nav li { list-style: none; float: left; position: relative; top: 1px; margin: 0 .2em 1px 0; padding: 0; white-space: nowrap; }
+
+#tabs .ui-tabs .ui-tabs-nav li a { float: left; padding: 0em; text-decoration: none; }
+#tabs .ui-tabs .ui-tabs-nav li.ui-tabs-selected { margin-bottom: 0; padding-bottom: 1px; }
+#tabs .ui-tabs .ui-tabs-nav li.ui-tabs-selected a, .ui-tabs .ui-tabs-nav li.ui-state-disabled a, .ui-tabs .ui-tabs-nav li.ui-state-processing a { cursor: text; }
+#tabs .ui-tabs .ui-tabs-nav li a, .ui-tabs.ui-tabs-collapsible .ui-tabs-nav li.ui-tabs-selected a { cursor: pointer; } /* first selector in group seems obsolete, but required to overcome bug in Opera applying cursor: text overall if defined elsewhere...  
+	
+*/
+
+/*.ui-tabs .ui-tabs-panel { display: block; border-width: 0; padding: 1em 0em ; background: none; }*/
+#tabs .ui-tabs .ui-tabs-hide { display: none !important; }
+
+
+
+#reviews div.header {
+  font-size: 12pt;
+  font-weight: bold;
+  border-bottom: 1px #2222aa dashed;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+#reviews div.review {
+  border-bottom: 1px #2222aa dashed;
+  margin-bottom: 10px;
+}
+
+#reviews div.review span.title {
+  font-size: 11pt;
+  font-weight: bold;
+}
+
+#reviews div.review span.attribution {
+  font-size: 8pt;
+}
+
+.lit {
+  background-color: #aaaaaa;
+  color: #0000bb;
+  margin-right: 1px;
+  padding-left: 1px;
+}
+
+.unlit {
+  background-color: #aaaaaa;
+  color: #000000;
+  margin-right: 1px;
+  padding-left: 1px;
+}
+
+.star-rating-control {
+  display: inline-block;
+  height: 15px;
+}
+
+.review_hr {
+  size: 1px;
+  background: silver;
+  border: none;
+  margin: 1em 0;
+}
+
+/*
+ * jQuery.Rating Plugin CSS - http://www.fyneworks.com/jquery/star-rating/
+ ************************************************************************** 
+*/
+
+div.rating-cancel, div.star-rating {
+  float: left;
+  width: 17px;
+  height: 15px;
+  text-indent: -999em;
+  cursor: pointer;
+  display: block;
+  background: transparent;
+  overflow: hidden
+}
+
+div.rating-cancel, div.rating-cancel a {
+  background: transparent url("<%= asset_path('store/reviews/delete.gif') %>") no-repeat scroll 0 -16px;
+}
+
+div.star-rating, div.star-rating a {
+  background: url("<%= asset_path('store/reviews/star.gif') %>") no-repeat 0 0px;
+}
+
+div.rating-cancel a, div.star-rating a {
+  display: block;
+  width: 16px;
+  height: 100%;
+  background-position: 0 0px;
+  border: 0
+}
+
+div.star-rating-on, div.star-rating-on a {
+  background-position: 0 -30px !important
+}
+
+div.star-rating-hover, div.star-rating-hover a {
+  background-position: 0 -30px !important;
+}
+
+/* Read Only CSS  
+	
+*/
+div.star-rating-readonly a {
+  cursor: default !important
+}
+
+/* Partial Star CSS  
+*/
+div.star-rating {
+/* 
+This caused the review stars not to show up
+background-color: transparent !important;
+overflow: hidden !important
+ *= require store/spree_fancy
+*/
+}
+
+/* END jQuery.Rating Plugin CSS  
+*/
+
+
+
+.progress-steps li {
+float: left;
+margin-right: 20px;
+font-weight: bold;
+text-transform: uppercase;
+padding: 5px 5px;
+color: #727276;
+}
+
+
+nav#taxonomies .taxons-list li a {
+font-size: 12pt;
+}
+
+
+  table#cart-detail {
+    width: 100%;
+    tbody#line_items {
+      tr {
+
+        td[data-hook="cart_item_price"], td[data-hook="cart_item_total"] {
+          @extend span.price;
+          @extend span.price.selling;
+        }
+        td[data-hook="cart_item_quantity"] {
+          .line_item_quantity {
+            width: 20px;
+          }
+        }
+        td[data-hook="cart_item_delete"] {
+          .delete {
+            display: block;
+            width: 20px;
+          }
+        }
+      }
+    }
+   
+  }
+
+
+
+  h6.product-section-title {
+    text-transform: uppercase;
+    border-bottom: 1px solid rgba(217, 217, 219, 1);
+      margin-bottom: 5px;
+
+    margin-top: 15px;
+  }
+  
+   nav#taxonomies .taxonomy-root {
+    text-transform: uppercase;
+    border-bottom: 1px solid rgba(217, 217, 219, 1);
+      margin-bottom: 5px;
+
+    margin-top: 15px;
+  }
+  
+  ul.taxons-list-1 {
+  
+  }
+  
+  ul.taxons-list-0 {
+   margin-left: 15px;
+  }
+  
+  div.header-image {
+	  
+	background-color: transparent;
+	margin:0px;
+/*	height:100px;*/
+	  
+  }
+  
+  nav #main-nav-bar {
+text-transform: uppercase;
+font-weight: bold;
+margin-top: 0px;
+margin-bottom: 10px;
+/*border-bottom: 1px solid #d9d9db;*/
+border-bottom: none;
+padding-bottom: 6px;
+}
+
+#top-nav-bar a {
+	
+	color: #333333;
+	
+}
+
+
+#main-nav-bar a {
+	
+	color: #333333;
+	
+}
+
+nav#taxonomies .taxonomy-root {
+text-transform: uppercase;
+border-bottom: 1px solid rgba(217, 217, 219, 1);
+margin-bottom: 5px;
+margin-top: 0px;
+}
+
+
+
+#subheader .container {
+position: relative;
+width: 100%;
+margin: 0 auto;
+padding: 0;
+background: transparent;
+/*background-color: rgba(255,255,255,0.9);*/
+}
+
+
+.container {
+position: relative;
+width: 960px;
+margin: 0 auto;
+padding: 0;
+background: transparent;
+/*background-color: rgba(255,255,255,0.9);*/
+}
+
+
+.row {
+	
+	margin-bottom: 0px;
+	
+}
+
+#header.row {
+
+
+min-height: 40px;
+padding-left: 0px;
+padding-right: 0px;
+
+margin-bottom: 0px;
+
+background: -moz-linear-gradient(top,  rgba(255,255,255,0) 0%, rgba(255,255,255,0.75) 90%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,0)), color-stop(90%,rgba(255,255,255,0.75))); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top,  rgba(255,255,255,0) 0%,rgba(255,255,255,0.75) 90%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top,  rgba(255,255,255,0) 0%,rgba(255,255,255,0.75) 90%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top,  rgba(255,255,255,0) 0%,rgba(255,255,255,0.75) 90%); /* IE10+ */
+background: linear-gradient(to bottom,  rgba(255,255,255,0) 0%,rgba(255,255,255,0.75) 90%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#bfffffff',GradientType=0 ); /* IE6-9 */
+
+
+/*-moz-border-radius: 4px;
+border-radius: 4px;
+
+*/
+
+-webkit-box-shadow: 0 1px 20px rgba(0,0,0,0.5);
+-moz-box-shadow: 0 1px 20px rgba(0,0,0,0.5);
+box-shadow: 0 1px 20px rgba(0,0,0,0.5);
+}
+
+/*
+#reviews div.review {
+  border-top: 1px rgb(217, 217, 219) solid;
+  border-bottom: none;
+  margin-top: 15px;
+  padding-top: 10px;
+}
+
+p.ratings-stars {
+display: block;
+-webkit-margin-before: 0em;
+-webkit-margin-after: 0em;
+-webkit-margin-start: 0px;
+-webkit-margin-end: 0px;
+}
+
+div.review {
+
+	margin-top: 15px;
+	
+}
+
+.ratings, .ratings-stars {
+	line-height: 0;
+	padding-top: 5px;
+	padding-bottom: 0px;
+}
+
+#ratings .p {
+	padding-top: 5px;
+	padding-bottom: 0px;	
+}
+*/
+
+a {
+	
+	color: #55733c;
+}
+
+
+.container .column, .container .columns {
+	float: left;
+	display: inline;
+/*	margin-left: 10px;
+	margin-right: 10px;
+*/	color: #333333;
+}
+
+.container .sixteen.columns {
+/*background-color: rgba(255,255,255,1);*/
+}
+
+
+.container .four.columns {
+/*
+background-color: rgba(255,255,255,1);
+padding: 0px;
+*/
+}
+
+.container .twelve.columns {
+	margin-left: auto;
+	margin-right: auto;
+	
+/*
+background-color: rgba(255,255,255,1);
+padding: 0px;
+*/
+}
+
+
+.column.omega, .columns.omega {
+margin-right: 0;
+margin-left: 0;
+padding: 0px;
+}
+
+
+#subheader {
+color: white;
+border-top: 4px solid #6587a0;
+border-bottom: 4px solid #6587a0;
+overflow: hidden;
+
+/*
+background-color: #234d68;
+
+-webkit-box-shadow: 0px 10px 20px 0px rgba(0,0,0,0.5);
+-moz-box-shadow: 0px 10px 20px 0px rgba(0,0,0,0.5);
+box-shadow: 0px 10px 20px 0px rgba(0,0,0,0.5);
+*/
+
+}
+
+.container .three.columns {
+width: 28%;
+margin:25px;
+}
+
+
+.container2 .three.columns {
+width: 33%;
+margin:0px;
+}
+
+
+.container .column, .container .columns {
+float: left;
+display: inline;
+margin-left: 0px;
+margin-right: 10px;
+}
+
+
+#wrapper.container {
+	
+	background-color: rgba(255,255,255,0.9);
+	padding: 20px;
+	border-radius: 10px;
+	border: 2px solid black;
+	width: 930px;
+}
+
+#wrapper p {
+	
+	color: black !important;
+	
+}
+
+#wrapper a {
+	
+	color: #333333 !important;
+	
+}
+
+#wrapper form {
+	
+	margin-right:0px;
+	max-width: 300px;
+}
+
+#wrapper .row {
+	
+	margin-left:20px;
+	
+}
+
+
+#wrapper2.container {
+	
+	background-color: rgba(255,255,255,0.9);
+	padding: 20px;
+	border-radius: 10px;
+	border: 2px solid black;
+	width: 930px;
+}
+
+#wrapper2 p {
+	
+	color: black !important;
+	
+}
+
+#wrapper2 a {
+	
+	color: #333333 !important;
+	
+}
+
+#wrapper2 form {
+	
+	margin-right:0px;
+	max-width: 300px;
+}
+
+#wrapper2 .row {
+	
+	margin-left:20px;
+	
+}
+
+
+#header .container .ten.columns {
+	width: 580px;
+}
+
+.container .ten.columns {
+}
+
+span.price.selling {
+	
+	font-size: 12pt;
+	
+}
+
+ul#products li .price {
+color: #2b5c55;
+font-size: 14pt;
+padding-top: 5px;
+display: block;
+}
+
+ul#products li a.info {
+height: 25px;
+margin-top: 5px;
+font-size: 12pt;
+color: #bbbbbb;
+border-bottom: 1px solid #d9d9db;
+overflow: hidden;
+}
+
+#products p.ratings-stars {
+	
+	margin: 10px 0px 0px 0px;
+	padding: 0px;
+	
+}
+
+#products div.ratings {
+	
+	padding: 0px;
+	line-height: 18px;
+}
+
+.home-page-header {
+	
+text-transform: uppercase;
+border-bottom: 1px solid rgba(217, 217, 219, 1);
+margin-bottom: 5px;
+margin-top: 0px;
+padding: 5px;
+max-width: 90%;
+}
+
+.home-page-content {
+
+padding: 10px;	
+	
+	
+}

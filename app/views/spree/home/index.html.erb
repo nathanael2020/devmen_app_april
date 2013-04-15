@@ -1,0 +1,62 @@
+
+<% if current_page?(root_path) %>
+
+<% content_for :subheader do %>
+
+  <%= render 'slider' %>
+
+<% end %>
+
+<% end %>
+
+  
+<div id="welcome-message">
+  <div class="container2" style="width: 100%">
+
+  	<div id="content" class="three columns">
+  	</div>
+  	
+  	Lorem ipsum.
+
+  	<div id="content" class="three columns">
+
+  	Lorem ipsum.
+
+  	</div>
+
+  	<div id="content" class="three columns">
+
+  	Lorem ipsum.
+    
+  	</div>
+  </div>
+</div>
+
+  
+<div class="container">
+  <% if @featured_products %>
+    <div id="featured-products" class="row">
+      <h3>Featured Products</h3>
+      <hr>
+      <ul class="carousel">
+        <% @featured_products.each do |product| %>
+          <%= render 'product', :product => product %>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <% if @latest_products %>
+    <div id="latest-products" class="row">
+      <h3>Latest Products</h3>
+      <hr>
+      <ul class="carousel">
+        <% @latest_products.each do |product| %>
+          <%= render 'product', :product => product %>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  
+  
+</div>
