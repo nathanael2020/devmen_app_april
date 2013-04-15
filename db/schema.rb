@@ -347,9 +347,9 @@ ActiveRecord::Schema.define(:version => 20130415043343) do
   create_table "spree_product_ingredients", :force => true do |t|
     t.integer  "product_id"
     t.integer  "ingredient_id"
-    t.float    "quantity"
-    t.datetime "created_at",    :null => false
-    t.datetime "updated_at",    :null => false
+    t.float    "amount_per_serving"
+    t.datetime "created_at",         :null => false
+    t.datetime "updated_at",         :null => false
   end
 
   add_index "spree_product_ingredients", ["ingredient_id"], :name => "index_spree_products_ingredients_on_ingredient_id"

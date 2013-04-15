@@ -4,7 +4,7 @@ class CreateSpreeProductIngredients < ActiveRecord::Migration
     create_table :spree_product_ingredients do |t|
       t.integer :product_id
       t.integer :ingredient_id
-      t.float :quantity
+      t.float :amount_per_serving
 
       t.timestamps
     end
