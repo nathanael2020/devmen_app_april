@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130408175108) do
+ActiveRecord::Schema.define(:version => 20130415043343) do
 
   create_table "spree_activators", :force => true do |t|
     t.string   "description"
@@ -158,6 +158,21 @@ ActiveRecord::Schema.define(:version => 20130408175108) do
     t.datetime "created_at",                             :null => false
     t.datetime "updated_at",                             :null => false
   end
+
+  create_table "spree_ingredients", :force => true do |t|
+    t.string   "name"
+    t.string   "unit"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "spree_ingredients_taxons", :id => false, :force => true do |t|
+    t.integer "ingredient_id"
+    t.integer "taxon_id"
+  end
+
+  add_index "spree_ingredients_taxons", ["ingredient_id"], :name => "index_spree_ingredients_taxons_on_ingredient_id"
+  add_index "spree_ingredients_taxons", ["taxon_id"], :name => "index_spree_ingredients_taxons_on_taxon_id"
 
   create_table "spree_inventory_units", :force => true do |t|
     t.integer  "lock_version",            :default => 0
@@ -328,6 +343,17 @@ ActiveRecord::Schema.define(:version => 20130408175108) do
     t.decimal "amount",     :precision => 8, :scale => 2
     t.string  "currency"
   end
+
+  create_table "spree_product_ingredients", :force => true do |t|
+    t.integer  "product_id"
+    t.integer  "ingredient_id"
+    t.float    "quantity"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
+  end
+
+  add_index "spree_product_ingredients", ["ingredient_id"], :name => "index_spree_products_ingredients_on_ingredient_id"
+  add_index "spree_product_ingredients", ["product_id"], :name => "index_spree_products_ingredients_on_product_id"
 
   create_table "spree_product_option_types", :force => true do |t|
     t.integer  "position"
