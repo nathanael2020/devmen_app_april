@@ -30,7 +30,7 @@ gem 'jquery-rails'
 
 # Use unicorn as the app server
  gem 'unicorn'
-
+ gem 'puma'
 # Deploy with Capistrano
 # gem 'capistrano'
 
@@ -46,3 +46,5 @@ gem 'spree_recently_viewed', :git => 'git://github.com/spree/spree_recently_view
 gem 'spree_contact_form', :git => 'git://github.com/joshnuss/spree-contact-form.git'
 gem 'spree_related_products', :git => 'git://github.com/spree/spree_related_products.git', :branch => '1-3-stable'
 gem 'spree_static_content', :github => 'spree/spree_static_content', :branch => '1-3-stable'
+
+gem 'spree_product_ingredients', :path => './spree_product_ingredients'
