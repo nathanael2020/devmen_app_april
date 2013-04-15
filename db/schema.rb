@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130415043343) do
+ActiveRecord::Schema.define(:version => 20130415081953) do
 
   create_table "spree_activators", :force => true do |t|
     t.string   "description"
@@ -390,6 +390,7 @@ ActiveRecord::Schema.define(:version => 20130415043343) do
     t.boolean  "on_demand",                                          :default => false
     t.decimal  "avg_rating",           :precision => 7, :scale => 5, :default => 0.0,   :null => false
     t.integer  "reviews_count",                                      :default => 0,     :null => false
+    t.boolean  "is_a_supplement",                                    :default => false
   end
 
   add_index "spree_products", ["available_on"], :name => "index_spree_products_on_available_on"
@@ -461,6 +462,25 @@ ActiveRecord::Schema.define(:version => 20130415043343) do
     t.string   "name"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+  end
+
+  create_table "spree_relation_types", :force => true do |t|
+    t.string   "name"
+    t.text     "description"
+    t.string   "applies_to"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
+  create_table "spree_relations", :force => true do |t|
+    t.integer  "relation_type_id"
+    t.integer  "relatable_id"
+    t.string   "relatable_type"
+    t.integer  "related_to_id"
+    t.string   "related_to_type"
+    t.datetime "created_at",                                                      :null => false
+    t.datetime "updated_at",                                                      :null => false
+    t.decimal  "discount_amount",  :precision => 8, :scale => 2, :default => 0.0
   end
 
   create_table "spree_return_authorizations", :force => true do |t|
