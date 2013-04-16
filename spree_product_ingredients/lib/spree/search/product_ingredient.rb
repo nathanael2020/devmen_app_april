@@ -3,6 +3,7 @@ module Spree::Search
 
     def retrieve_products
       @products_scope = get_base_scope
+      @products_scope_without_name = get_base_scope_without_name_conditions
       curr_page = page || 1
 
       @products = @products_scope.includes([:master => :prices])
@@ -10,14 +11,22 @@ module Spree::Search
         @products = @products.where("spree_prices.amount IS NOT NULL").where("spree_prices.currency" => current_currency)
       end
 
-      base_sql = "( spree_products.id in (#{@products.select('spree_products.id').to_sql}))"
+      # search by name, descrription product
+      #
+      base_sql = "( spree_products.id in ( SELECT \"base_query\".subquery_product_id FROM (#{@products.select('spree_products.id as subquery_product_id').to_sql}) as base_query ))"
+
+      # search products by ingredient lists
+      #
       if (ingredient_sql = Spree::Ingredient.search_product_ids(keywords)).present?
-        ingredient_sql = "( spree_products.id in (#{ingredient_sql.to_sql}))"
+        ingredient_sql = "( spree_products.id in ( SELECT \"base_query1\".subquery_product_id FROM (#{@products_scope_without_name.where(:id => ingredient_sql).select('spree_products.id as subquery_product_id').to_sql}) as base_query1 ))"
       else
         ingredient_sql = ''
       end
+
+      # search products by review data
+      #
       if (review_sql = review_subquery(keywords)).present?
-        review_sql = "(spree_products.id in (#{review_sql})) "
+        review_sql = "( spree_products.id in ( SELECT \"base_query2\".subquery_product_id FROM (#{@products_scope_without_name.where(:id => review_sql).select('spree_products.id as subquery_product_id').to_sql}) as base_query2 ))"
       else
         review_sql = ''
       end
@@ -36,8 +45,15 @@ module Spree::Search
         like_sql = like_sql.or(Spree::Review.arel_table[:title].matches("%#{q}%").or(Spree::Review.arel_table[:review].matches("%#{q}%")))
       end
 
-      Spree::Review.select("spree_reviews.product_id").where(like_sql).to_sql
+      Spree::Review.select("spree_reviews.product_id").where(like_sql)
     end
 
+    def get_base_scope_without_name_conditions
+      base_scope = Spree::Product.active
+      base_scope = base_scope.in_taxon(taxon) unless taxon.blank?
+      base_scope = base_scope.on_hand unless Spree::Config[:show_zero_stock_products]
+      base_scope = add_search_scopes(base_scope)
+      base_scope
+    end
   end
 end
