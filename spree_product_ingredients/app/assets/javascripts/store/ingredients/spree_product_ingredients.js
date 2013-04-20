@@ -1,7 +1,7 @@
 $(function(){
 var open_tooltip_in_window = function (options){
-  var height =  options["height"]||400;
-  var width =  options["width"]||200;
+  var height =  options["height"]||300;
+  var width =  options["width"]||450;
   var content = options["content"];
   var window_name = options["window_name"]||'Ingredient';
 
