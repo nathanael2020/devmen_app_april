@@ -8,16 +8,17 @@
  *= require store/spree_core
  *= require store/spree_promo
 
- *= require_self
- *= require_tree .
  *= require store/spree_reviews
 
 
- *= require jquery-ui-1.9.2.custom
+ *= require ./jquery-ui
  *= require jquery.bxslider
  *= require icons
  *= require icons-codes
- *= require store/spree_product_ingredients
+ *= require store/ingredients
+ *= require_self
+ *= require_tree .
+
 */
 
 body {
@@ -197,8 +198,8 @@ display: table;
 */
 
 /*.ui-tabs .ui-tabs-panel { display: block; border-width: 0; padding: 1em 0em ; background: none; }*/
-#tabs .ui-tabs .ui-tabs-hide { display: none !important; }
-
+/* #tabs .ui-tabs .ui-tabs-hide { display: none !important; } */
+#tabs .ui-tabs-hide { display: none !important; }
 
 
 #reviews div.header {

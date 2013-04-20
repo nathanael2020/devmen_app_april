@@ -1,5 +1,5 @@
 <div class="row">
-  <div class="alpha ten columns">
+ <div class="twelve columns alpha omega">
     <%= f.field_container :name do %>
       <%= f.label :name %> <span class="required">*</span><br />
       <%= f.text_field :name, :class => 'fullwidth title' %>
@@ -20,4 +20,13 @@
       <%= f.hidden_field :taxon_ids, :value => f.object.taxon_ids.join(',') %>
     <% end %>
   </div>
+
+ <div class="twelve columns alpha omega">
+    <%= f.field_container :description do %>
+      <%= f.label :description, t(:description) %>
+      <%= f.text_area :description, {:rows => '3', :class => 'fullwidth'} %>
+      <%= f.error_message_on :description %>
+    <% end %>
+  </div>
+
 </div>

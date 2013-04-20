@@ -13,7 +13,11 @@
   <% @order.ingredient_table.each do |ingredient, ing_products| %>
   <% @total_item = 0 %>
   <tr class='line_items'>
-    <td><%= ingredient.name %></td>
+    <td>
+      <span class='ingredient_tooltips'  data-powertip_name='<%= ingredient.name %>'  data-powertip_desc= '<%= ingredient.description %>' >
+        <%= ingredient.name %>
+      </span>
+    </td>
 
     <% @order.ingredient_table_head.each do |h_product| %>
     <td>

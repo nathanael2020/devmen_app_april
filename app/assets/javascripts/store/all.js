@@ -9,6 +9,11 @@
 
 //= require store/spree_core
 //= require store/spree_promo
-//= require store/spree_product_ingredients
-//= require_tree .
+//= require store/ingredients
 //= require jquery.rating
+//= require_tree .
+//= require_self
+
+$(function(){
+  $("#tabs").tabs();
+})

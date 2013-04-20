@@ -24,7 +24,11 @@
 
         <% @ingredients_table.each do |ingredient, items| %>
         <tr>
-        <td> <%= ingredient.name %></td>
+        <td>
+          <span class='ingredient_tooltips'  data-powertip_name='<%= ingredient.name %>'  data-powertip_desc= '<%= ingredient.description %>' >
+            <%= ingredient.name %>
+          </span>
+        </td>
         <% @supplment_products.select{|j| j.taxon_ids.include?(@supplment_current_taxon.id) }.each do |product| %>
           <td>
             <% if current_product = items.detect{|j| product.id == j.product_id} %>

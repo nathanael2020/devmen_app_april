@@ -4,7 +4,7 @@ class Spree::ProductIngredient < ActiveRecord::Base
   belongs_to :ingredient
 
   validates :product_id, :ingredient_id, :amount_per_serving, presence: true
-  delegate :name, :to => :ingredient, :prefix => true
+  delegate :name, :description, :to => :ingredient, :prefix => true
   def pretty_amount
     "#{amount_per_serving} #{ingredient.unit}"
   end
