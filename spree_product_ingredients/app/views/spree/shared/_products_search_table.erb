@@ -1,0 +1,54 @@
+<%
+   paginated_products = @searcher.retrieve_products if params.key?(:keywords)
+   paginated_products ||= products
+   %>
+
+<% if products.empty? %>
+<%= t(:no_products_found) %>
+<% elsif params.key?(:keywords) %>
+<h6 class="search-results-title"><%= t(:search_results, :keywords => h(params[:keywords])) %></h6>
+<% end %>
+<% if products.any? %>
+<table>
+  <% products.each do |product| %>
+  <tr>
+    <td rowspan=2>
+      <%= link_to small_image(product, :itemprop => "image"), product, :itemprop => 'url' %>
+    </td>
+    <td>
+      <%= link_to truncate(product.name, :length => 50), product, :class => 'info', :itemprop => "name", :title => product.name %>
+      <div><%= truncate(product.description, :length => 50) %></div>
+      <div>
+        <!-- <span class="price selling" itemprop="price"> -->
+        <!-- <%= product.price_in(current_currency).display_price %> -->
+        <!-- </span> -->
+      </div>
+    </td>
+    <td>
+
+
+      <div class="ratings">
+        <p class="ratings-stars">
+          <span title="<%= I18n.t('star', :count => product.stars) %>">
+            <%= render :partial => "spree/reviews/stars", :locals => {:stars => product.stars } %>
+          </span>
+        </p>
+      </div>
+
+    </td>
+  </tr>
+  <tr>
+    <td colspan=2>
+      <div>
+        <%= product.taxons.select{|j| j != @taxon }.map{|t| "<b>#{link_to(t.name + " (#{t.products.count} items)" , seo_url(t))}</b>"  }.join(', ').html_safe %>
+      </div>
+
+    </td>
+  </tr>
+  <% end %>
+</table>
+<% end %>
+
+<% if paginated_products.respond_to?(:num_pages) %>
+<%= paginate paginated_products %>
+<% end %>

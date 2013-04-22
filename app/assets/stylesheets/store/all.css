@@ -136,7 +136,7 @@ list-style: none;
 
 .ui-widget-content {
 border: 0px solid #aaaaaa !important;
-background: #ffffff/*{bgColorContent} *= require store/spree_fancy
+background: #ffffff/*{bgColorContent}
 */ url(images/ui-bg_flat_75_ffffff_40x100.png)/*{bgImgUrlContent}
 */ 50%/*{bgContentXPos}
 */ 50%/*{bgContentYPos}
@@ -266,14 +266,6 @@ div.rating-cancel, div.star-rating {
   overflow: hidden
 }
 
-div.rating-cancel, div.rating-cancel a {
-  background: transparent url("<%= asset_path('store/reviews/delete.gif') %>") no-repeat scroll 0 -16px;
-}
-
-div.star-rating, div.star-rating a {
-  background: url("<%= asset_path('store/reviews/star.gif') %>") no-repeat 0 0px;
-}
-
 div.rating-cancel a, div.star-rating a {
   display: block;
   width: 16px;
@@ -283,11 +275,11 @@ div.rating-cancel a, div.star-rating a {
 }
 
 div.star-rating-on, div.star-rating-on a {
-  background-position: 0 -30px !important
+  background-position: 0 -32px !important
 }
 
 div.star-rating-hover, div.star-rating-hover a {
-  background-position: 0 -30px !important;
+  background-position: 0 -32px !important;
 }
 
 /* Read Only CSS
@@ -304,7 +296,6 @@ div.star-rating {
 This caused the review stars not to show up
 background-color: transparent !important;
 overflow: hidden !important
- *= require store/spree_fancy
 */
 }
 

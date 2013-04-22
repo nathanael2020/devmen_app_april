@@ -4,16 +4,18 @@
 // It's not advisable to add code directly here, but if you do, it'll appear at the bottom of the
 // the compiled file.
 //
-//= require jquery
+//= require ./jquery
 //= require jquery_ujs
 
 //= require store/spree_core
 //= require store/spree_promo
 //= require store/ingredients
 //= require jquery.rating
-//= require_tree .
+//= require jquery-ui.min
+//= require ./spree_fancy
+
 //= require_self
 
 $(function(){
-  $("#tabs").tabs();
+   $("#tabs").tabs();
 })
