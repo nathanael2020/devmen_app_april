@@ -1,4 +1,4 @@
-<%= form_for :order, :url => populate_orders_path do |f| %>
+<%= form_for :order, :url => populate_orders_path, :remote => true,:html =>{ :id => "populate-form"} do |f| %>
   <div id="inside-product-cart-form" data-hook="inside_product_cart_form" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
 
     <% if @product.has_variants? %>
@@ -28,20 +28,20 @@
 
     <% if @product.price_in(current_currency) and !@product.price.nil? %>
       <div data-hook="product_price" class="columns five <% if !@product.has_variants? %> alpha <% else %> omega <% end %>">
-        
+
         <div id="product-price">
           <h6 style="font-weight:bold; font-size:12pt; text-transform:uppercase">
-          
-          <%= t(:price) %>   
-          
+
+          <%= t(:price) %>
+
           <span class="price selling" itemprop="price"><%= @product.price_in(current_currency).display_price %></span>
-          
+
           </h6>
 
         </div>
 
         <div class="add-to-cart"><span style="font-weight:bold; font-size:11pt" class="product-section-title">Quantity</span>
-          <% if @product.on_sale? %>      
+          <% if @product.on_sale? %>
             <%= number_field_tag (@product.has_variants? ? :quantity : "variants[#{@product.master.id}]"),
               1, :class => 'title', :in => 1..@product.on_hand, :min => 1, :max => 2 %>
             <%= button_tag :class => 'primary', :id => 'add-to-cart-button', :type => :submit do %>
@@ -57,7 +57,8 @@
           <br>
           <div><span class="price selling" itemprop="price"><%= t('product_not_available_in_this_currency') %></span></div>
         </div>
-    <% end %>    
+    <% end %>
 
   </div>
 <% end %>
+<div style="display:none;" id="preview-population"></div>

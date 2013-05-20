@@ -1,0 +1,16 @@
+$("#preview-population").html("<%= j render "preview_populator" %>")
+$("#preview-population").dialog({
+                                  width: '30%',
+                                  height: '400',
+                                  title: "1 ITEM ADDED TO YOUR BAG",
+                                   modal: true,
+                                  buttons: [
+                                                {
+                                                 text: 'Continue Shopping',
+                                                 click: function(){ $(this).dialog('close') }
+                                                },
+                                                {
+                                                 text: 'Check Out',
+                                                 click: function(){ window.location.href = '/cart'   }
+                                                }
+                                            ] })

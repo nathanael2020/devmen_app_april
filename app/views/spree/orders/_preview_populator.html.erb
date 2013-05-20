@@ -1,0 +1,38 @@
+<div>
+<% @populator.last_items.each do |item| %>
+<div>
+  <div style="float:left;">
+    <%= link_to product_image(item.product), item.product %>
+  </div>
+  <div id="product-description" data-hook="product_description">
+
+    <h1 class="product-title" itemprop="name"><%= item.product.name %></h1>
+    <div>
+      <%= t(:price) %>
+      <span class="price selling" itemprop="price"><%= item.product.price_in(current_currency).display_price %></span>
+    </div>
+    <% @product_properties = item.product.product_properties.includes(:property) %>
+    <div >
+      <% unless @product_properties.empty? %>
+      <h6 class="product-section-title"><%= t('properties')%></h6>
+      <table class="table-display" data-hook>
+        <tbody>
+          <% @product_properties.each do |product_property| %>
+          <% css_class = cycle('even', 'odd', :name => "properties") %>
+          <tr class="<%= css_class %>">
+            <td><strong><%= product_property.property.presentation %></strong></td>
+            <td><%= product_property.value %></td>
+          </tr>
+          <% end %>
+          <% reset_cycle('properties') %>
+        </tbody>
+      </table>
+      <% end %>
+
+    </div>
+
+  </div>
+</div>
+<% end %>
+
+</div>
