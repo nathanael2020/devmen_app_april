@@ -6,8 +6,11 @@ WholeEquine::Application.routes.draw do
   #
   # We ask that you don't use the :as option here, as Spree relies on it being the default of "spree"
   mount Spree::Core::Engine, :at => '/'
-    
-          
+
+  Spree::Core::Engine.routes.prepend do
+    match "/orders/bag" => "orders#bag", :as => "bag"
+  end
+
           # The priority is based upon order of creation:
   # first created -> highest priority.
 
@@ -71,7 +74,7 @@ Spree::Core::Engine.routes.append do
 
   resources :contact, :controller => 'contact'
 
-  namespace :admin do 
+  namespace :admin do
     resources :contact_topics
-  end	
+  end
 end

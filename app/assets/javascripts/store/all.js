@@ -18,4 +18,10 @@
 
 $(function(){
    $("#tabs").tabs();
+  $("#link-to-cart a").on('click', function(event){
+    if (!!$('#cart_bag:hidden').length){
+      $('#cart_bag').load('/orders/bag.js',function(){ $('#cart_bag').fadeToggle() })
+    } else { $('#cart_bag').fadeToggle(); }
+    return false;
+  })
 })

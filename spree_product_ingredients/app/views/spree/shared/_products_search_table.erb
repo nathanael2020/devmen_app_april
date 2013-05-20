@@ -9,44 +9,23 @@
 <h6 class="search-results-title"><%= t(:search_results, :keywords => h(params[:keywords])) %></h6>
 <% end %>
 <% if products.any? %>
-<table>
+<ul id="products" class="inline product-listing" data-hook>
   <% products.each do |product| %>
-  <tr>
-    <td rowspan=2>
-      <%= link_to small_image(product, :itemprop => "image"), product, :itemprop => 'url' %>
-    </td>
-    <td>
-      <%= link_to truncate(product.name, :length => 50), product, :class => 'info', :itemprop => "name", :title => product.name %>
-      <div><%= truncate(product.description, :length => 50) %></div>
-      <div>
-        <!-- <span class="price selling" itemprop="price"> -->
-        <!-- <%= product.price_in(current_currency).display_price %> -->
-        <!-- </span> -->
-      </div>
-    </td>
-    <td>
-
-
-      <div class="ratings">
-        <p class="ratings-stars">
-          <span title="<%= I18n.t('star', :count => product.stars) %>">
-            <%= render :partial => "spree/reviews/stars", :locals => {:stars => product.stars } %>
-          </span>
-        </p>
-      </div>
-
-    </td>
-  </tr>
-  <tr>
-    <td colspan=2>
-      <div>
-        <%= product.taxons.select{|j| j != @taxon }.map{|t| "<b>#{link_to(t.name + " (#{t.products.count} items)" , seo_url(t))}</b>"  }.join(', ').html_safe %>
-      </div>
-
-    </td>
-  </tr>
+    <% if product.on_display? %>
+      <li id="product_<%= product.id %>" class="columns three <%= cycle("alpha", "secondary", "", "omega secondary", :name => "classes") %>" data-hook="products_list_item" itemscope itemtype="http://schema.org/Product">
+        <div class="circle">
+          <%= link_to small_image(product, :itemprop => "image"), product, :itemprop => 'url' %>
+        </div>
+        <%= link_to truncate(product.name, :length => 50), product, :class => 'info', :itemprop => "name", :title => product.name %>
+        <span class="price selling" itemprop="price"><%= product.price_in(current_currency).display_price %></span>
+      </li>
+    <% end %>
   <% end %>
-</table>
+  <% reset_cycle("classes") %>
+</ul>
+
+
+
 <% end %>
 
 <% if paginated_products.respond_to?(:num_pages) %>
