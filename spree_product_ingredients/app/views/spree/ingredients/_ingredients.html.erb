@@ -1,4 +1,27 @@
+<table class='table-window-ingredients table' >
 
+  <tr>
+    <th>Products</th>
+    <% @order.product_servings(current_currency).each do |product| %>
+    <th><%= product.name %></th>
+    <% end %>
+  </tr>
+  <tr>
+    <td>Servings Per Container</td>
+    <% @order.product_servings(current_currency).each do |product| %>
+    <td><%= product.serving_display(current_currency) %></td>
+    <% end %>
+
+  </tr>
+  <tr>
+    <td>Price Per Serving</td>
+    <% @order.product_servings(current_currency).each do |product| %>
+    <td><%= product.price_per_serving_display(current_currency) %></td>
+    <% end %>
+
+  </tr>
+
+</table>
 <table class='table-window-ingredients table' >
   <tr>
     <th>Ingredient</th>
@@ -6,14 +29,6 @@
     <th><%= h_product.name %></th>
     <% end %>
     <th>Total</th>
-  </tr>
-
-  <tr>
-    <th>Servings</th>
-    <% @order.ingredient_table_head.each do |h_product| %>
-    <td><%= h_product.servings * @order.line_items.detect{|j|  j.product.id == h_product.id }.quantity  %></td>
-    <% end %>
-    <td></td>
   </tr>
 
   <% @order.ingredient_table.each do |ingredient, ing_products| %>

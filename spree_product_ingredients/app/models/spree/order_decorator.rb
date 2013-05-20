@@ -12,4 +12,7 @@ Spree::Order.class_eval do
     @ingredient_table_head ||= line_items.select{ |j| j.product.is_a_supplement?  }.map(&:product).sort_by(&:id)
   end
 
+  def product_servings(current_currency = nil)
+    @product_servings ||= line_items.select{ |j| j.product.serving_options(current_currency).present? }.map(&:product)
+  end
 end

@@ -10,6 +10,13 @@ class Spree::Ingredient < ActiveRecord::Base
   end
 
   class << self
+
+    def search(q)
+      return [] if q.blank?
+      like_sql = arel_table[:name].matches("%#{q}%").or(arel_table[:description].matches("%#{q}%"))
+      where(like_sql)
+    end
+
     def search_product_ids(queries = [])
       queries = [queries].compact.map(&:split).flatten.compact
       return nil if queries.blank?

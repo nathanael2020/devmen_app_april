@@ -10,13 +10,6 @@
     <% end %>
     <th>Total</th>
   </tr>
-  <tr>
-    <th>Servings</th>
-    <% @order.ingredient_table_head.each do |h_product| %>
-    <td><%= h_product.servings * @order.line_items.detect{|j|  j.product.id == h_product.id }.quantity  %></td>
-    <% end %>
-    <td></td>
-  </tr>
 
   <% @order.ingredient_table.each do |ingredient, ing_products| %>
   <% @total_item = 0 %>
