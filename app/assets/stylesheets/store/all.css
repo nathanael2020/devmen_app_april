@@ -872,3 +872,34 @@ ul.crtbtns li{
 .cartcenter ul.cartitem_smal li.prods  a {
     font-size: 10px !important;
 }
+.previewPopulator {
+visibility: visible;
+width: 502px;
+height: 500px;
+left: 50%;
+-moz-box-shadow: 0 0 10px rgba(0,0,0,.25);
+-webkit-box-shadow: 0 0 10px rgba(0,0,0,.25);
+box-shadow: 0 0 10px 0 rgba(0,0,0,.25);
+}
+.previewPopulator .ui-dialog-titlebar {
+    display:none;
+}
+.previewPopulator .close {
+position: absolute;
+background: url(close.gif) no-repeat 0 0 transparent;
+text-indent: -9999px;
+width: 25px;
+height: 25px;
+overflow: hidden;
+cursor: pointer;
+right: 20px;
+top: 2px;
+}
+.previewPopulator .close:hover {
+background-position: 0 bottom;
+}
+.previewPopulator .footer {
+    bottom: 20px;
+    position: absolute;
+    right: 100px;
+}
