@@ -90,7 +90,30 @@ var open_tooltip_in_window = function (options){
     $.each(products, function(i, item){
       tr.push('<th>'+item.name+'</th>');
     })
-    tr.push('</tr>');
+    tr.push("</tr>");
+
+    var servings = $.map(servings_data, function(item){
+      if ($.inArray(item.product_id, product_ids ) != -1){
+        return item
+      }
+    });
+
+    /* Servings Per Container */
+    tr.push("<tr>");
+    tr.push("<td>Servings Per Container</td>");
+    $.each(servings, function(i, item){
+      tr.push("<td>"+item.cost+"</td>");
+    });
+    tr.push("</tr>");
+
+    /* Price Per Serving */
+    tr.push("<tr>");
+    tr.push("<td>Price Per Serving</td>");
+    $.each(servings, function(i, item){
+      tr.push("<td>"+(item.price||'')+"</td>");
+    });
+
+    tr.push("</tr>");
 
     var ingredients = $.map(ingredients_table, function(item){
       var show_item = false

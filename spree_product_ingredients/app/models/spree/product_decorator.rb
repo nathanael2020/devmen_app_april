@@ -30,6 +30,8 @@ Spree::Product.class_eval do
     else
       "#{(min_price / min_count.to_f).round(3) } to #{ (max_price / max_count.to_f).round(3) }"
     end
+  rescue
+    nil
   end
 
   def serving_options(current_currency = nil)

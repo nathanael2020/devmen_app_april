@@ -22,6 +22,21 @@
         <% end %>
       </tr>
 
+      <tr>
+        <td>Servings Per Container</td>
+        <% @supplment_products.select{|j| j.taxon_ids.include?(@supplment_current_taxon.id) }.each do |product| %>
+        <td><%= product.serving_display(current_currency) %></td>
+        <% end %>
+      </tr>
+      <tr>
+        <td>Price Per Serving</td>
+        <% @supplment_products.select{|j| j.taxon_ids.include?(@supplment_current_taxon.id) }.each do |product| %>
+        <td><%= product.price_per_serving_display(current_currency) %></td>
+        <% end %>
+      </tr>
+      <tr style='height:35px;'>
+        <td></td><td></td><td></td>
+      </tr>
         <% @ingredients_table.each do |ingredient, items| %>
         <tr>
         <td>
@@ -53,4 +68,5 @@
 <script>
   supplment_products = <%= @supplment_products.to_json(:include => :taxons ).html_safe %>;
   ingredients_table = <%= @ingredients_table.to_a.to_json.html_safe %>;
+  servings_data = <%=  @supplment_products.map{|j| {:product_id => j.id, :cost => j.serving_display(current_currency), :price => j.price_per_serving_display(current_currency) } }.to_json.html_safe %>
 </script>
