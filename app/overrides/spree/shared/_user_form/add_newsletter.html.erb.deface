@@ -1,0 +1,5 @@
+<!-- insert_after '[data-hook="signup_below_password_fields"]' -->
+    <p>
+  <%= f.label :newsletter, t(:newsletter_message) %>
+  <%= f.check_box :newsletter, :class => 'title' %>
+</p>
