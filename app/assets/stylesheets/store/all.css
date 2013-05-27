@@ -19,12 +19,14 @@
  *= require_self
  *= require_tree .
 
+ *= require store/spree_address_book
 */
 
 body {
   font-family: 'Gill Sans';
   font-size: 12pt;
-/*  font-weight: 400;*/
+/*  font-weight: 400; *= require store/spree_address_book
+*/
   color: #404042;
   line-height: 24px !important;
   background-color: #FFFFFF;
@@ -64,6 +66,7 @@ background-attachment: fixed;
 text-decoration: none;
 color: #0033ee;
 }
+ *= require store/spree_address_book
 */
 
 #tabs .ui-widget-header {
@@ -94,6 +97,7 @@ color: #0033ee;
 
 #tabs .ui-widget {
 font-size: 12pt/*{fsDefault}
+ *= require store/spree_address_book
 */;
 }
 
@@ -101,7 +105,8 @@ font-size: 12pt/*{fsDefault}
 #tabs .ui-widget-content {
 font-family: inherit;
 font-size: inherit;
-}*/
+} *= require store/spree_address_book
+*/
 
 #tabs .ui-tabs .ui-tabs-nav li {
 list-style: none;
@@ -137,13 +142,19 @@ list-style: none;
 .ui-widget-content {
 border: 0px solid #aaaaaa !important;
 background: #ffffff/*{bgColorContent}
+ *= require store/spree_address_book
 */ url(images/ui-bg_flat_75_ffffff_40x100.png)/*{bgImgUrlContent}
+ *= require store/spree_address_book
 */ 50%/*{bgContentXPos}
+ *= require store/spree_address_book
 */ 50%/*{bgContentYPos}
+ *= require store/spree_address_book
 */ repeat-x/*{bgContentRepeat}
 
+ *= require store/spree_address_book
 */;
 color: #222222/*{fcContent} *
+ *= require store/spree_address_book
 */;
 }
 
@@ -183,10 +194,12 @@ display: table;
 }
 
 #tabs .ui-tabs { position: relative; padding-right: .2em; zoom: 1; } /* position: relative prevents IE scroll bug (element with position: relative inside container with overflow: auto appear as "fixed")
+ *= require store/spree_address_book
 */
 .ui-tabs .ui-tabs-nav li a { margin: 0; padding-left: 0em !important; }
 
-/*.ui-tabs .ui-tabs-nav li { list-style: none; float: left; position: relative; top: 1px; margin: 0 .2em 1px 0; border-bottom: 0 !important; padding: 0; white-space: nowrap; }*/
+/*.ui-tabs .ui-tabs-nav li { list-style: none; float: left; position: relative; top: 1px; margin: 0 .2em 1px 0; border-bottom: 0 !important; padding: 0; white-space: nowrap; } *= require store/spree_address_book
+*/
 
 #tabs .ui-tabs .ui-tabs-nav li { list-style: none; float: left; position: relative; top: 1px; margin: 0 .2em 1px 0; padding: 0; white-space: nowrap; }
 
@@ -195,10 +208,13 @@ display: table;
 #tabs .ui-tabs .ui-tabs-nav li.ui-tabs-selected a, .ui-tabs .ui-tabs-nav li.ui-state-disabled a, .ui-tabs .ui-tabs-nav li.ui-state-processing a { cursor: text; }
 #tabs .ui-tabs .ui-tabs-nav li a, .ui-tabs.ui-tabs-collapsible .ui-tabs-nav li.ui-tabs-selected a { cursor: pointer; } /* first selector in group seems obsolete, but required to overcome bug in Opera applying cursor: text overall if defined elsewhere...
 
+ *= require store/spree_address_book
 */
 
-/*.ui-tabs .ui-tabs-panel { display: block; border-width: 0; padding: 1em 0em ; background: none; }*/
-/* #tabs .ui-tabs .ui-tabs-hide { display: none !important; } */
+/*.ui-tabs .ui-tabs-panel { display: block; border-width: 0; padding: 1em 0em ; background: none; } *= require store/spree_address_book
+*/
+/* #tabs .ui-tabs .ui-tabs-hide { display: none !important; }  *= require store/spree_address_book
+*/
 #tabs .ui-tabs-hide { display: none !important; }
 
 
@@ -253,6 +269,7 @@ display: table;
 /*
  * jQuery.Rating Plugin CSS - http://www.fyneworks.com/jquery/star-rating/
  **************************************************************************
+ *= require store/spree_address_book
 */
 
 div.rating-cancel, div.star-rating {
@@ -284,22 +301,26 @@ div.star-rating-hover, div.star-rating-hover a {
 
 /* Read Only CSS
 
+ *= require store/spree_address_book
 */
 div.star-rating-readonly a {
   cursor: default !important
 }
 
 /* Partial Star CSS
+ *= require store/spree_address_book
 */
 div.star-rating {
 /*
 This caused the review stars not to show up
 background-color: transparent !important;
 overflow: hidden !important
+ *= require store/spree_address_book
 */
 }
 
 /* END jQuery.Rating Plugin CSS
+ *= require store/spree_address_book
 */
 
 
@@ -374,7 +395,8 @@ font-size: 12pt;
 
 	background-color: transparent;
 	margin:0px;
-/*	height:100px;*/
+/*	height:100px; *= require store/spree_address_book
+*/
 
   }
 
@@ -383,7 +405,8 @@ text-transform: uppercase;
 font-weight: bold;
 margin-top: 0px;
 margin-bottom: 10px;
-/*border-bottom: 1px solid #d9d9db;*/
+/*border-bottom: 1px solid #d9d9db; *= require store/spree_address_book
+*/
 border-bottom: none;
 padding-bottom: 6px;
 }
@@ -416,7 +439,8 @@ width: 100%;
 margin: 0 auto;
 padding: 0;
 background: transparent;
-/*background-color: rgba(255,255,255,0.9);*/
+/*background-color: rgba(255,255,255,0.9); *= require store/spree_address_book
+*/
 }
 
 
@@ -426,7 +450,8 @@ width: 960px;
 margin: 0 auto;
 padding: 0;
 background: transparent;
-/*background-color: rgba(255,255,255,0.9);*/
+/*background-color: rgba(255,255,255,0.9); *= require store/spree_address_book
+*/
 }
 
 
@@ -445,18 +470,26 @@ padding-right: 0px;
 
 margin-bottom: 0px;
 
-background: -moz-linear-gradient(top,  rgba(255,255,255,0) 0%, rgba(255,255,255,0.75) 90%); /* FF3.6+ */
-background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,0)), color-stop(90%,rgba(255,255,255,0.75))); /* Chrome,Safari4+ */
-background: -webkit-linear-gradient(top,  rgba(255,255,255,0) 0%,rgba(255,255,255,0.75) 90%); /* Chrome10+,Safari5.1+ */
-background: -o-linear-gradient(top,  rgba(255,255,255,0) 0%,rgba(255,255,255,0.75) 90%); /* Opera 11.10+ */
-background: -ms-linear-gradient(top,  rgba(255,255,255,0) 0%,rgba(255,255,255,0.75) 90%); /* IE10+ */
-background: linear-gradient(to bottom,  rgba(255,255,255,0) 0%,rgba(255,255,255,0.75) 90%); /* W3C */
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#bfffffff',GradientType=0 ); /* IE6-9 */
+background: -moz-linear-gradient(top,  rgba(255,255,255,0) 0%, rgba(255,255,255,0.75) 90%); /* FF3.6+  *= require store/spree_address_book
+*/
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,0)), color-stop(90%,rgba(255,255,255,0.75))); /* Chrome,Safari4+  *= require store/spree_address_book
+*/
+background: -webkit-linear-gradient(top,  rgba(255,255,255,0) 0%,rgba(255,255,255,0.75) 90%); /* Chrome10+,Safari5.1+  *= require store/spree_address_book
+*/
+background: -o-linear-gradient(top,  rgba(255,255,255,0) 0%,rgba(255,255,255,0.75) 90%); /* Opera 11.10+  *= require store/spree_address_book
+*/
+background: -ms-linear-gradient(top,  rgba(255,255,255,0) 0%,rgba(255,255,255,0.75) 90%); /* IE10+  *= require store/spree_address_book
+*/
+background: linear-gradient(to bottom,  rgba(255,255,255,0) 0%,rgba(255,255,255,0.75) 90%); /* W3C  *= require store/spree_address_book
+*/
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#bfffffff',GradientType=0 ); /* IE6-9  *= require store/spree_address_book
+*/
 
 
 /*-moz-border-radius: 4px;
 border-radius: 4px;
 
+ *= require store/spree_address_book
 */
 
 -webkit-box-shadow: 0 1px 20px rgba(0,0,0,0.5);
@@ -496,6 +529,7 @@ div.review {
 	padding-top: 5px;
 	padding-bottom: 0px;
 }
+ *= require store/spree_address_book
 */
 
 a {
@@ -509,11 +543,13 @@ a {
 	display: inline;
 /*	margin-left: 10px;
 	margin-right: 10px;
+ *= require store/spree_address_book
 */	color: #333333;
 }
 
 .container .sixteen.columns {
-/*background-color: rgba(255,255,255,1);*/
+/*background-color: rgba(255,255,255,1); *= require store/spree_address_book
+*/
 }
 
 
@@ -521,6 +557,7 @@ a {
 /*
 background-color: rgba(255,255,255,1);
 padding: 0px;
+ *= require store/spree_address_book
 */
 }
 
@@ -531,6 +568,7 @@ padding: 0px;
 /*
 background-color: rgba(255,255,255,1);
 padding: 0px;
+ *= require store/spree_address_book
 */
 }
 
@@ -554,6 +592,7 @@ background-color: #234d68;
 -webkit-box-shadow: 0px 10px 20px 0px rgba(0,0,0,0.5);
 -moz-box-shadow: 0px 10px 20px 0px rgba(0,0,0,0.5);
 box-shadow: 0px 10px 20px 0px rgba(0,0,0,0.5);
+ *= require store/spree_address_book
 */
 
 }
@@ -715,6 +754,7 @@ padding: 10px;
 =======================================================================
 	Header Rules
 =======================================================================
+ *= require store/spree_address_book
 */
 #masthead {
 	width:960px;

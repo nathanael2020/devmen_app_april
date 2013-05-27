@@ -1,6 +1,4 @@
-//= require store/spree_core
 //= require jquery.hoverIntent
-//= require jquery-ui
 //= require jquery.bxslider
 //= require jquery.dotdotdot-1.5.2
 //= require matchMedia
@@ -17,7 +15,7 @@ $(function(){
 
     var cached_carousel_1 = $('#featured-products .carousel').html();
     var cached_carousel_2 = $('#latest-products .carousel').html();
-    
+
     $('#home-slider > ul').bxSlider({
       adaptiveHeight: true,
       auto: true,
@@ -44,7 +42,7 @@ $(function(){
       watch: true,
       height: 250
     });
-    
+
   }
 
   // Make buttons from radio inoputs
