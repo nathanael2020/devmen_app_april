@@ -1,6 +1,6 @@
 <footer id="footer" class="sixteen columns" data-hook>
   <div class="container">
-    
+
     <div class="three columns">
       <div class="phone">
         <a href="callto:012341234567">1-800-555-5555</a>
@@ -16,7 +16,7 @@
         &nbsp&nbsp San Francisco, CA USA
       </div> -->
     </div>
-    
+
 <!--    <div class="four columns">
       <h5>Our Best Offers</h5>
       <ul>
@@ -25,11 +25,11 @@
         <li><a href="/products">Specials</a></li>
         <li><a href="/products">Manufacturers</a></li>
         <li><a href="/products">Suppliers</a></li>
-        <li><a href="/products">Service</a></li>        
+        <li><a href="/products">Service</a></li>
       </ul>
     </div>
     -->
-    
+
     <div class="three columns">
       <h5>Regular Services</h5>
       <ul>
@@ -39,8 +39,15 @@
         <li><a href="/products">F.A.Q.</a></li>
       </ul>
     </div>
-    
-    <div class="three columns">
+
+    <div class="four columns">
+
+      <%= form_for :newsletter, :url => subscribe_path, :method => :post do |f| %>
+      <div class="newsletter">
+        Newsletter:  <input type='email' name='email' >
+        <button>send</button>
+      </div>
+      <% end %>
 
 
 

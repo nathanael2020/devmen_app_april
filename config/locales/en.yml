@@ -2,6 +2,7 @@
 # See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
 en:
+  newsletter_message: "Sign up and save 10% off your first order"
   address_book:
     primary_address: Primary Address  
     secondary_address: Secondary Address  

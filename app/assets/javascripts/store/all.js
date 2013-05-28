@@ -18,7 +18,21 @@
 
 $(function(){
     $("#tabs").tabs();
+    if (window.show_popup_user_info){
+        if (!$("#user-info-popup").length){  $("body").append("<div id='user-info-popup'></div>"); }
+        $("#user-info-popup").load("/account/info", function(){
+            $("#user-info-popup").dialog({
+                dialogClass: "previewPopulator",
+                width: '50%',
+                height: '600',
+                title: "1 ITEM ADDED TO YOUR BAG",
+                modal: true});
+            $("#close-user-info-popup").on("click", function(){
+            $("#user-info-popup").dialog('close'); })
 
+        })
+
+    };
     $("#link-to-cart a").on('click', function(event){
         if (!!$('#cart_bag:hidden').length){
             $('#cart_bag').load('/orders/bag.js',function(){ $('#cart_bag').fadeToggle() })

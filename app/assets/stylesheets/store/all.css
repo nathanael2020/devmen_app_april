@@ -943,3 +943,15 @@ background-position: 0 bottom;
     position: absolute;
     right: 100px;
 }
+
+
+#cats-inputs{
+  font-size: 80%;
+
+}
+#cats-inputs .cats-item{
+margin: 2px;
+}
+#cats-inputs .cats-item label{
+margin-right: 2px;
+}
