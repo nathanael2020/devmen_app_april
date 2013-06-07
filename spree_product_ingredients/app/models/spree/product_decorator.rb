@@ -18,17 +18,22 @@ Spree::Product.class_eval do
   end
 
 
-  def price_per_serving_display(current_currency = nil)
+  def price_per_serving_display(currency = :en)
 
-    res_price = serving_options(current_currency).map{|j| j.price }
-    res_count = serving_options(current_currency).map{|j| j.count.to_i }
+    res_price = serving_options(currency).map{|j| j.price }
+    res_count = serving_options(currency).map{|j| j.count.to_i }
     max_price, min_price = res_price.max, res_price.min
     max_count, min_count = res_count.max, res_count.min
 
     if max_price == min_price
-      max_price / max_count
+      amount = max_price / max_count
+      Spree::Money.new(amount, { :currency => currency }).to_s
+
     else
-      "#{(min_price / min_count.to_f).round(3) } to #{ (max_price / max_count.to_f).round(3) }"
+      start_amount = Spree::Money.new((min_price / min_count.to_f), { :currency => currency })
+      end_amount = Spree::Money.new((max_price / max_count.to_f), { :currency => currency })
+
+      "#{end_amount} to #{start_amount}"
     end
   rescue
     nil
