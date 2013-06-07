@@ -14,6 +14,7 @@
 //= require jquery.rating
 //= require store/spree_address_book
 //= require ./spree_fancy
+//= require store/user_addresses
 //= require_self
 
 $(function(){

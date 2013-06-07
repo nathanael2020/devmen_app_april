@@ -30,46 +30,7 @@
   <% end %>
 
 </div>
-
-<h3>Addresses</h3>
-
-<div class="shipping-address">
-  <div class="columns alpha twelve">
-
-  <% @primary_address = Spree::Address.primary_address(spree_current_user) %>
-  <% @second_address = Spree::Address.secondary_address(spree_current_user) %>
-  <%= render :partial => 'spree/shared/error_messages', :locals => { :target => @primary_address } %>
-
-  <div class="columns alpha six">
-    <%= form_for @primary_address, :namespace => "primary_address", :html => {:id => "checkout_form_address" } do |f| %>
-    <%= f.hidden_field :position, :value => 1 %>
-    <fieldset>
-      <%= content_tag(:legend, t(:primary_address, :scope => :address_book)) %>
-      <div class="inner">
-        <%= render :partial => 'spree/users/address_form', :locals => {   :address_name => 'address',
-        :address_form => f,  :address_type => 'shipping',  :address => @primary_address   } %>
-      </div>
-      <%= f.submit t(:update) %>
-    </fieldset>
-    <% end %>
-  </div>
-
-  <div class="columns alpha six">
-    <%= form_for @second_address, :namespace => "secondary_address", :html => {:id => "checkout_form_address" } do |f| %>
-    <%= f.hidden_field :position, :value => 2 %>
-    <fieldset>
-      <%= content_tag(:legend, t(:secondary_address, :scope => :address_book)) %>
-
-      <div class="inner">
-        <%= render :partial => 'spree/users/address_form', :locals => {   :address_name => 'address',
-        :address_form => f,  :address_type => 'billing',  :address => @second_address   } %>
-      </div>
-      <%= f.submit t(:update) %>
-    </fieldset>
-    <% end %>
-    </div>
-  </div>
-</div>
+<%= render :partial => "addresses"%>
 
 <div class="columns alpha twelve">
 

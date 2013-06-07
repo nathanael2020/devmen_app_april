@@ -12,6 +12,11 @@ WholeEquine::Application.routes.draw do
     match "/charts" => "charts#index", :as => "charts"
     match "/account/info" => "users#info", :as => "user_info"
     match "/subscribe" => "newsletter#subscribe", :as => "subscribe", :via => :post
+
+    get "/account/address/new" => "users#new_address", :as => "new_user_address"
+    post "/account/address" => "users#create_address", :as => "create_address"
+    put "/account/address/:id" => "users#update_address", :as => "update_address"
+    delete "/account/address/:id" => "users#destroy_address", :as => "delete_address"
   end
 
           # The priority is based upon order of creation:

@@ -1,0 +1,15 @@
+<h3>Addresses
+  <% if spree_current_user.addresses.size <= Spree::Address::USER_LIMIT %>
+ <%= link_to "Add address", new_user_address_path, :id => "add-user-address", :class => "button", :style => "background-color: white;float:right;" %>
+  <% end %>
+
+</h3>
+
+<div class="shipping-address  profile-address">
+  <div class="columns alpha sixteen">
+    <% Spree::Address.user_addresses_for_edit(spree_current_user, @address).each_with_index do |addr, index| %>
+    <%= render :partial => "address", :locals => {:addr => addr, :index => index }%>
+    <% end %>
+
+  </div>
+</div>

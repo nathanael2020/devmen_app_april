@@ -955,3 +955,24 @@ margin: 2px;
 #cats-inputs .cats-item label{
 margin-right: 2px;
 }
+
+
+.profile-address form{
+  max-width: 450px !important;
+}
+.profile-address form input{
+  display: inline-block;
+  width: 60% !important;
+  margin-left: 5px;
+  float: right;
+}
+.profile-address form select{
+float: right;
+width: 71% !important;
+height: 34px;
+margin-top: 2px;
+}
+
+.profile-address .hidden{
+  display:none;
+}
