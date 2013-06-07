@@ -49,7 +49,9 @@
         <li><a href="#prod_tab_1"><span>Description</span></a></li>
         <li><a href="#prod_tab_2"><span>Details</span></a></li>
         <li><a href="#prod_tab_3"><span>Reviews</span></a></li>
+        <% if @product.label_image%>
         <li><a href="#prod_tab_4"><span>Label</span></a></li>
+        <% end %>
       </ul>
       <div id="prod_tab_1">
         <div id="product-description" data-hook="product_description">
@@ -77,15 +79,15 @@
 
       </div>
 
-
+      <% if @product.label_image? %>
       <div id="prod_tab_4">
 
-        <div id="blah" data-hook>
-	        Product label goes here...
+        <div >
+	        <%= image_tag @product.label_image_url(:product) %>
         </div>
 
       </div>
-
+      <% end %>
     </div>
 
     <div class="row" data-hook="product_right_part_wrap">

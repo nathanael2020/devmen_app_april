@@ -6,3 +6,4 @@ en:
   address_book:
     primary_address: Primary Address  
     secondary_address: Secondary Address  
+  label_image: Label Image
