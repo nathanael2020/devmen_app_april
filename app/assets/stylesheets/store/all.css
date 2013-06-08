@@ -16,6 +16,7 @@
  *= require icons
  *= require icons-codes
  *= require store/ingredients
+ *= require ./spree_fancy
  *= require_self
  *= require_tree .
 
@@ -976,3 +977,10 @@ margin-top: 2px;
 .profile-address .hidden{
   display:none;
 }
+
+
+
+
+
+
+
