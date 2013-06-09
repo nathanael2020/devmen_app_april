@@ -982,5 +982,12 @@ margin-top: 2px;
 
 
 
-
-
+.sort-bar {
+width: 100%;
+display: block;
+height: 33px;
+}
+.sort-bar #sort-products{
+float: right;
+height: 30px;
+}

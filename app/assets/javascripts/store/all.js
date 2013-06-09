@@ -18,6 +18,11 @@
 //= require_self
 
 $(function(){
+
+    $("#sort-products").on("change", function(event){
+        window.location.href = $(this).val();
+    });
+
     $("#tabs").tabs();
     if (window.show_popup_user_info){
         if (!$("#user-info-popup").length){  $("body").append("<div id='user-info-popup'></div>"); }

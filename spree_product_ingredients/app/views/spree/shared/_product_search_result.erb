@@ -3,6 +3,10 @@
   <% if @products.empty? %>
   <h6 class="search-results-title"><%= t(:no_products_found) %></h6>
   <% else %>
+  <div class="sort-bar">
+           <%= sort_products(params) %>
+    </div>
+
     <%= render :partial => 'spree/shared/products_search_table', :locals => { :products => @products, :taxon => @taxon } %>
   <% end %>
   <% if params[:keywords].present? %>

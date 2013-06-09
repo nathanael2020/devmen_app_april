@@ -15,6 +15,10 @@
     <% if @products.empty? %>
       <h6 class="search-results-title"><%= t(:no_products_found) %></h6>
     <% else %>
+    <div class="sort-bar">
+      <%= sort_products(params) %>
+    </div>
+
       <%= render :partial => 'spree/shared/products', :locals => { :products => @products, :taxon => @taxon } %>
     <% end %>
   </div>
@@ -22,6 +26,10 @@
 <% else %>
 
   <div data-hook="homepage_products">
+    <div class="sort-bar">
+      <%= sort_products(params) %>
+    </div>
+
     <%= render :partial => 'spree/shared/products', :locals => { :products => @products, :taxon => @taxon } %>
   </div>
 <% end %>
