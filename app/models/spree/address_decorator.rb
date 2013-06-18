@@ -20,6 +20,10 @@ Spree::Address.class_eval do
     end
   end
 
+  def to_s
+    name || super
+  end
+
   class << self
     def user_addresses_for_edit(user, current_address)
       _addresses = user.addresses.order_by_position

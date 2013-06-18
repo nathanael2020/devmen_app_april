@@ -1,5 +1,4 @@
 //= require admin/spree_core
-console.log('dffffffffffffffffffffffffffff')
 function cleanIngredientsTaxons(data) {
   var taxons = $.map(data['taxons'], function(result) {
     return result
