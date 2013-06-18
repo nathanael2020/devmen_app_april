@@ -60,7 +60,11 @@ module Spree::Search
           @products = @products.order("spree_products.created_at #{direction_sort}")
         when "name"
           @products = @products.order("spree_products.name #{direction_sort}")
+        else
+          @products = @products.order("spree_products.created_at DESC")
         end
+      else
+
       end
       @products = @products.page(curr_page).per(per_page)
     end

@@ -11,7 +11,7 @@
       </div>
       <div  class="field">
         <% if f.object.label_image? %>
-        <%= image_tag f.object.label_image_url %>
+        <%= image_tag f.object.label_image_url(:original) %>
         <% end %>
 
       </div>

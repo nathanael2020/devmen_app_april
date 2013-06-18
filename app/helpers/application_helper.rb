@@ -1,9 +1,7 @@
 module ApplicationHelper
   def sort_products(params = {})
     content_tag :select, :id => "sort-products" do
-      option =  content_tag :option
-
-      option << content_tag(:option, option_options(:name, :desc, params)) do
+      option = content_tag(:option, option_options(:name, :desc, params)) do
         'Alphabetical (increasing)'
       end
       option << content_tag(:option, option_options(:name, :asc, params)) do
@@ -39,10 +37,13 @@ module ApplicationHelper
     _options
   end
   def current_sort?(field, target, params = {})
-    params.has_key?(:sort) &&
+    if params.has_key?(:sort)
       (params[:sort].to_s == field.to_s) &&
       params.has_key?(:ordering) &&
       (params[:ordering].to_s == target.to_s)
+    else
+      (field.to_s == "date") && (target.to_s == 'desc')
+    end
   end
 
   def type_address(addr)
