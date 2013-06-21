@@ -2,6 +2,9 @@
 # See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
 en:
+  without_delivery: 'In your area delivery is not done.'
+  please_select_shipping_method: 'Please select the shipping method.'
+  check_shipping_methods: 'Check the shipping methods.'  
   newsletter_message: "Sign up and save 10% off your first order"
   address_book:
     primary_address: Primary Address  

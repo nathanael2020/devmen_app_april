@@ -991,3 +991,11 @@ height: 33px;
 float: right;
 height: 30px;
 }
+
+#checkout-summary{
+  
+  text-align: left;
+}
+#checkout-summary h3{
+    text-align: center;
+  }

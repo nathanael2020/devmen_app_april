@@ -17,6 +17,8 @@ WholeEquine::Application.routes.draw do
     post "/account/address" => "users#create_address", :as => "create_address"
     put "/account/address/:id" => "users#update_address", :as => "update_address"
     delete "/account/address/:id" => "users#destroy_address", :as => "delete_address"
+    resources :shipping_methods, :only => [:index]
+    post "/shipping_methods.json" => "shipping_methods#index", :as => "shipping_methods", :format => :json
   end
 
           # The priority is based upon order of creation:

@@ -15,6 +15,8 @@
 //= require store/spree_address_book
 //= require ./spree_fancy
 //= require store/user_addresses
+//= require_tree ./templates
+//= require store/single_checkout_page
 //= require_self
 
 $(function(){
