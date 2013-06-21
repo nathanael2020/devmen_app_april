@@ -19,9 +19,13 @@ Spree::Address.class_eval do
       update_attribute(:position, Spree::Address.maximum(:position) + 1)
     end
   end
-
-  def to_s
-    name || super
+  def display_address
+    [
+     "#{address1}",
+     "#{address2}",
+     "#{city}, #{state || state_name} #{zipcode}",
+     "#{country}"
+    ].reject(&:empty?).join ", "
   end
 
   class << self
