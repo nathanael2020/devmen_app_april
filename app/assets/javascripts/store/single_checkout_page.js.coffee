@@ -1,5 +1,15 @@
 $ ->
+
   if ($ '#checkout_form_payment').is('*')
+
+    $("form#checkout_form_payment").on "ajax:error", (e, x, t) ->
+      $("#content").html x.responseText
+
+    $("form#checkout_form_payment").on "ajax:success", (e, x, t) ->
+      $("#content").html x.responseText
+
+
+
     ($ 'input[type="radio"][name="order[payments_attributes][][payment_method_id]"]').click(->
       ($ '#payment-methods li').hide()
       ($ '#payment_method_' + @value).show() if @checked

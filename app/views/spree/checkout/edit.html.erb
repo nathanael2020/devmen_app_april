@@ -2,7 +2,7 @@
   <%= javascript_include_tag states_url(:format => :js) %>
   <%= javascript_include_tag countries_url(:format => :js) %>
 <% end %>
-
+<div id="scp-checkout">
 <div id="checkout" data-hook>
   <%= render :partial => 'spree/shared/error_messages', :locals => { :target => @order } %>
 
@@ -34,4 +34,5 @@
     <% end %>
   </div>
 
+</div>
 </div>
