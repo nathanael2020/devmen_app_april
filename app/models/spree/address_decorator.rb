@@ -9,7 +9,7 @@ Spree::Address.class_eval do
 
   validates :name, uniqueness: { scope: :user_id }, unless: ->(t){ t.name.blank? }
   def rebuild_position
-    user.addresses.order_by_position.each_with_index {|j, pos|
+    user && user.addresses.order_by_position.each_with_index {|j, pos|
       j.update_column(:position, pos)
     }
   end

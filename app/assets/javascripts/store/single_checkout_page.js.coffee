@@ -72,6 +72,7 @@ $ ->
           use_billing: true
           state: state
           country: country
+        $(".inner", "#shipping").hide();
       else
         if $('input#order_ship_address_attributes_state_name').css('display') == 'none'
           state = $('#order_ship_address_attributes_state_id').val()
@@ -86,7 +87,7 @@ $ ->
           use_billing: false
           state: state
           country: country
-
+        $(".inner", "#shipping").show()
 
     $('input#order_use_billing').on "change", @renderShippingMethods
     $('[name="order[bill_address_id]"]').on "change", @renderShippingMethods

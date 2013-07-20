@@ -15,7 +15,7 @@ $ ->
         success: (data)->
           html = $(data)
           html.find("input[name='commit']").after("<a class='button remove-new-address' herf='#' style='background-color:red;'>Delete</a>")
-          $(".profile-address").append(html)
+          $(".columns:first", ".profile-address").append(html)
           if $(".profile-address form").length >= 6
             $("#add-user-address").hide();
 
